@@ -1,10 +1,10 @@
 import random
+
 nombre = input("Nombre de tu heroe: ")
 hp = 100
 nivel = 1
 xp = 0
 oro = 50
-
 
 inventario = ["espada", "pocion"]
 
@@ -37,23 +37,25 @@ def curar():
 
 def encontrar_tesoro():
     global oro
-monedas = random.randint(10, 40)
-oro += monedas
-print("Encontraste", monedas, "monedas")
 
-if random.randint(1,3) == 1:
+    monedas = random.randint(10, 40)
+    oro += monedas
+    print("Encontraste", monedas, "monedas")
+
+    if random.randint(1,3) == 1:
         inventario.append("pocion")
         print("Tambien encontraste una pocion")
 
 def tienda():
-     global oro
-print("\nTIENDA")
-print("1 Comprar pocion (20 oro)")
-print("2 Salir")
+    global oro
 
-opcion = input("> ")
+    print("\nTIENDA")
+    print("1 Comprar pocion (20 oro)")
+    print("2 Salir")
 
-if opcion == "1":
+    opcion = input("> ")
+
+    if opcion == "1":
         if oro >= 20:
             oro -= 20
             inventario.append("pocion")
